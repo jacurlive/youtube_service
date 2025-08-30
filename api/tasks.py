@@ -2,19 +2,20 @@ from celery import shared_task
 from django.conf import settings
 from pyrogram import Client
 from .models import YouTubeDownload
+from dotenv import load_dotenv
 import os
 import json
 import yt_dlp
 import random
 import subprocess
 
+load_dotenv()
 
-API_ID = 1626657
-API_HASH = "b0d1b4e33de690e1783dfbc547b6c18a"
 
-BOT_TOKEN = "7622544354:AAEvqwts2Pm4A58NoGiJKW1wIUX48GL-Syk"
+API_ID = os.environ['API_ID']
+API_HASH = os.environ['API_HASH']
 
-SESSION_FILE = "/home/jacur/www-projects/youtube_service/api/uploader.session"
+BOT_TOKEN = os.environ['BOT_TOKEN']
 
 CHANNELS = ["@yt_11111", "@yt_22222"]
 
