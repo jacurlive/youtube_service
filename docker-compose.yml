@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres:15
+    container_name: youtube_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: youtube_user
+      POSTGRES_PASSWORD: youtube_pass
+      POSTGRES_DB: youtube_db
+    ports:
+      - "7778:5432"   # используем другой порт, чтобы не мешать контейнеру на 7777
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
