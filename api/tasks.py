@@ -107,7 +107,7 @@ def download_video_task(self, obj_id):
             'quiet': True,
             'no_warnings': True,
             'progress_hooks': [_progress_hook_factory(obj_id, total_size, video_size)],
-            # 'proxy': 'socks5://127.0.0.1:1080',
+            'proxy': 'socks5://127.0.0.1:1080',
             'extractor_args': {'youtube': {'player-client': ['android']}}
         }
         if not obj.is_audio:
