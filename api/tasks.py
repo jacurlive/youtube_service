@@ -101,15 +101,18 @@ def download_video_task(self, obj_id):
             audio_size = int(audio_fmt.get("filesize") or audio_fmt.get("filesize_approx") or 0)
             total_size = video_size + audio_size
 
+        proxy_url = "http://smart-tgi5rxm47cur:2exNOf86LAcdacTl@proxy.smartproxy.net:3120"
+
         ydl_opts = {
             'format': fmt,
             'outtmpl': output_path,
             'quiet': True,
             'no_warnings': True,
             'progress_hooks': [_progress_hook_factory(obj_id, total_size, video_size)],
-            'proxy': 'socks5://127.0.0.1:1080',
+            'proxy': proxy_url,
             'extractor_args': {'youtube': {'player-client': ['android']}}
         }
+
         if not obj.is_audio:
             ydl_opts['merge_output_format'] = 'mp4'
 
