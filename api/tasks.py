@@ -16,8 +16,8 @@ API_ID = os.environ['API_ID']
 API_HASH = os.environ['API_HASH']
 
 BOT_TOKEN = os.environ['BOT_TOKEN']
-
-CHANNELS = ["@yt_11111", "@yt_22222"]
+# НУЖНО ПОДСТАВИТЬ КАНАЛЫ ДЛЯ КЕША
+CHANNELS = ["@channel"]
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DOWNLOAD_DIR = os.path.join(BASE_DIR, "media", "videos")
